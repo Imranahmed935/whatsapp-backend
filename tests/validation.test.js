@@ -11,6 +11,7 @@ function validateMessage(phone, message) {
   return "valid";
 }
 
+
 test("should fail when phone is missing", () => {
 
   const result = validateMessage("", "hello");
@@ -19,6 +20,7 @@ test("should fail when phone is missing", () => {
 
 });
 
+
 test("should fail when message is missing", () => {
 
   const result = validateMessage("+8801871421977", "");
@@ -26,6 +28,7 @@ test("should fail when message is missing", () => {
   expect(result).toBe("Message is required");
 
 });
+
 
 test("should pass when phone and message exist", () => {
 

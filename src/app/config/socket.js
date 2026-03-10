@@ -1,6 +1,7 @@
 const socketIo = require("socket.io");
 const whatsappService = require("../services/whatsapp.service");
 
+
 let io;
 
 const initSocket = (server) => {

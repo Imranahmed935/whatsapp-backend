@@ -1,7 +1,8 @@
 const request = require("supertest");
 const app = require("../src/app");
 
-jest.mock("../src/services/whatsapp.service", () => ({
+
+jest.mock("../src/app/services/whatsapp.service.js", () => ({
   sendMessage: jest.fn().mockResolvedValue({ id: "mock-message-id" }),
   waitUntilReady: jest.fn().mockResolvedValue(true),
   client: {
@@ -20,6 +21,7 @@ describe("POST /api/send-message", () => {
     expect(res.statusCode).toBe(400);
   });
 
+
   it("should return error if message missing", async () => {
     const res = await request(app)
       .post("/api/send-message")
@@ -28,6 +30,7 @@ describe("POST /api/send-message", () => {
     expect(res.statusCode).toBe(400);
   });
 
+  
   it("should accept valid request", async () => {
     const res = await request(app)
       .post("/api/send-message")
@@ -37,3 +40,5 @@ describe("POST /api/send-message", () => {
   });
 
 });
+
+

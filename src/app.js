@@ -1,9 +1,9 @@
 const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
-const limiter = require("./middleware/rateLimiter");
-const router = require("./module/message/message.routes");
-const errorHandler = require("./middleware/errorHandler");
+const limiter = require("./app/middleware/rateLimiter");
+const router = require("./app/module/message/message.routes");
+const errorHandler = require("./app/middleware/errorHandler");
 
 const app = express();
 

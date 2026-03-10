@@ -6,7 +6,7 @@ class WhatsAppService extends EventEmitter {
     super();
     
     this.client = new Client({
-      authStrategy: new LocalAuth({ clientId: "whatsapp-session" }),
+      authStrategy: new LocalAuth({ clientId: process.env.CLIENTID }),
       puppeteer: { headless: false },
     });
 
