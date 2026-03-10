@@ -1,11 +1,9 @@
 const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
-
-
 const limiter = require("./middleware/rateLimiter");
-// const errorHandler = require("./middleware/errorHandler");
 const router = require("./module/message/message.routes");
+const errorHandler = require("./middleware/errorHandler");
 
 const app = express();
 
@@ -15,5 +13,7 @@ app.use(helmet());
 app.use(limiter);
 
 app.use("/api", router);
+
+app.use(errorHandler)
 
 module.exports = app;

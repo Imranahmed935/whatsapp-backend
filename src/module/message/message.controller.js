@@ -1,5 +1,6 @@
 
 const whatsappService = require("../../services/whatsapp.service");
+const queue = require("../../utils/message.queue");
 
 exports.sendMessage = async (req, res, next) => {
   try {
@@ -12,7 +13,9 @@ exports.sendMessage = async (req, res, next) => {
       });
     }
 
-    const result = await whatsappService.sendMessage(phone, message);
+    const result = await queue.add(() =>
+      whatsappService.sendMessage(phone, message)
+    );
 
     res.json({
       success: true,
