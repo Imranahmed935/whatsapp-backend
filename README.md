@@ -38,7 +38,7 @@ A Node.js backend service to send WhatsApp messages. Includes QR authentication,
 
 ```bash
 git clone https://github.com/Imranahmed935/whatsapp-backend.git
-cd whatsapp-backend/backend
+cd whatsapp-backend
 ```
 
 ### 2. Install dependencies
@@ -79,7 +79,7 @@ npm run dev
 #### Send Message
 
 ```
-POST /api/messages/send
+POST /api/send-message
 ```
 
 **Request Body:**

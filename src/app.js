@@ -14,6 +14,10 @@ app.use(limiter);
 
 app.use("/api", router);
 
+app.get("/", (req, res) => {
+  res.send("WhatsApp Backend API Running");
+});
+
 app.use(errorHandler)
 
 module.exports = app;

@@ -17,7 +17,6 @@ describe("POST /api/send-message", () => {
     const res = await request(app)
       .post("/api/send-message")
       .send({ message: "hello" });
-
     expect(res.statusCode).toBe(400);
   });
 
@@ -26,7 +25,6 @@ describe("POST /api/send-message", () => {
     const res = await request(app)
       .post("/api/send-message")
       .send({ phone: "+8801871421977" });
-
     expect(res.statusCode).toBe(400);
   });
 
@@ -35,7 +33,6 @@ describe("POST /api/send-message", () => {
     const res = await request(app)
       .post("/api/send-message")
       .send({ phone: "+8801871421977", message: "Hello" });
-
     expect(res.statusCode).toBe(200);
   });
 
